@@ -1,1 +1,2 @@
-= Demo app for Navigation in a Vaadin App Tutorial
+Demo app for Navigation in a Vaadin App Tutorial
+=
