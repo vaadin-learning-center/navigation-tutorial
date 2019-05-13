@@ -17,7 +17,7 @@ import com.vaadin.flow.component.html.Label;
 public class NotFoundView extends Div
   implements HasErrorParameter<NotFoundException> {
 
-  private Label error = new Label();
+  private final Label error = new Label();
 
   public NotFoundView() {
     add(error);
