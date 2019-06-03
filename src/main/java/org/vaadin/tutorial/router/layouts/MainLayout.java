@@ -27,8 +27,8 @@ public class MainLayout
                               .orElse(FALSE);
 
     //second access - login view
-    if (! isAuthenticated &&
-        ! path.equals(NAV)) {
+    if (!isAuthenticated &&
+        !path.equals(NAV)) {
       event.forwardTo(NAV , path);
     }
   }

@@ -45,16 +45,14 @@ public class LoginView extends Composite<Div>
       Boolean isAuthenticated = ofNullable((Boolean)getCurrent().getAttribute(ATTRIBUTE_IS_AUTH))
           .orElse(FALSE);
 
-      if (isAuthenticated) {
-        current.navigate(parameter);
-      } else {
-        //always true - nothing for production
+      if (!isAuthenticated) {
         String username = event.getUsername();
         String password = event.getPassword();
         vaadinSession.setAttribute(ATTRIBUTE_USERNAME , username);
         vaadinSession.setAttribute(ATTRIBUTE_IS_AUTH , TRUE);
-        current.navigate(MainView.NAV);
       }
+
+      current.navigate(parameter);
     });
     getContent().add(loginForm);
   }
