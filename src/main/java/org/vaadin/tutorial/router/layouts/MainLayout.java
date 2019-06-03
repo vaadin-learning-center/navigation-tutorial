@@ -6,7 +6,6 @@ import static java.util.Optional.ofNullable;
 import static org.vaadin.tutorial.router.views.LoginView.ATTRIBUTE_IS_AUTH;
 import static org.vaadin.tutorial.router.views.LoginView.NAV;
 
-import com.vaadin.flow.component.Html;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.BeforeEnterEvent;
@@ -35,8 +34,6 @@ public class MainLayout
   }
 
   public MainLayout() {
-    add(
-      new Html(
-        new H1("Vaadin Router Tutorial Inc.").getText()));
+    add(new H1("Vaadin Router Tutorial Inc."));
   }
 }

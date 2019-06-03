@@ -15,9 +15,7 @@ public class WatermelonView extends Div {
   public static final String NAV = FruityView.NAV + "/" + "Watermelon";
 
   public WatermelonView() {
-    add(
-      new Html(
-        new H3("Nice choice! Watermelon is my favorite too!").getText()));
+    add(new H3("Nice choice! Watermelon is my favorite too!"));
     add(new Html("<i>-- Yours, Web Robot.</i>"));
   }
 }

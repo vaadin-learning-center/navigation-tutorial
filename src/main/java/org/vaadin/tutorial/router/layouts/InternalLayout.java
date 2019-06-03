@@ -18,7 +18,7 @@ public class InternalLayout extends MainLayout {
 
     // Not the best hack
     String path = event.getLocation().getPath();
-    if (! path.equals(MainView.NAV)) {
+    if (!path.equals(MainView.NAV)) {
       tabs.setSelectedIndex(1);
     }
   }
