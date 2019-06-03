@@ -8,6 +8,8 @@ import static org.vaadin.tutorial.router.views.FruityView.NAV_ALIAS_FRUITS;
 import com.vaadin.flow.component.Html;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.H3;
+import com.vaadin.flow.component.html.H4;
 import com.vaadin.flow.component.radiobutton.RadioButtonGroup;
 import com.vaadin.flow.router.BeforeEvent;
 import com.vaadin.flow.router.HasUrlParameter;
@@ -29,15 +31,20 @@ public class FruityView extends Div implements HasUrlParameter<String> {
   public static final String NAV_ALIAS_APPLE = "apple";
 
   @Override
-  public void setParameter(BeforeEvent event ,
-                           @OptionalParameter String parameter) {
+  public void setParameter(BeforeEvent event,
+                          @OptionalParameter String parameter) {
     if (parameter != null) {
-      add(new Html("<h4><i>" + parameter + "</i> is a nice selection! Try again.</h4>"));
+      add(
+        new Html(
+          new H4(
+            "<i>" + parameter + "</i> is a nice selection! Try again.").getText()));
     }
   }
 
   public FruityView() {
-    add(new Html("<h3>Select your favorite fruit:</h3>"));
+    add(
+      new Html(
+        new H3("Select your favorite fruit:").getText()));
 
     RadioButtonGroup<String> group = new RadioButtonGroup<>();
     group.setItems("Apple" , "Banana" , "Watermelon");

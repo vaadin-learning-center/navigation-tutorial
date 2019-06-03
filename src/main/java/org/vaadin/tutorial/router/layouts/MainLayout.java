@@ -6,16 +6,12 @@ import static java.util.Optional.ofNullable;
 import static org.vaadin.tutorial.router.views.LoginView.ATTRIBUTE_IS_AUTH;
 import static org.vaadin.tutorial.router.views.LoginView.NAV;
 
-import java.util.Optional;
-
 import com.vaadin.flow.component.Html;
+import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.BeforeEnterEvent;
 import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.router.RouterLayout;
-import com.vaadin.flow.server.VaadinSession;
-
-import org.vaadin.tutorial.router.views.LoginView;
 
 public class MainLayout
     extends VerticalLayout implements RouterLayout, BeforeEnterObserver {
@@ -29,7 +25,7 @@ public class MainLayout
 //                              : getCurrent().getAttribute(Boolean.class);
 
     Boolean isAuthenticated = ofNullable((Boolean)getCurrent().getAttribute(ATTRIBUTE_IS_AUTH))
-                               .orElse(FALSE);
+                              .orElse(FALSE);
 
     //second access - login view
     if (! isAuthenticated &&
@@ -39,6 +35,8 @@ public class MainLayout
   }
 
   public MainLayout() {
-    add(new Html("<h1>Vaadin Router Tutorial Inc.</h1>"));
+    add(
+      new Html(
+        new H1("Vaadin Router Tutorial Inc.").getText()));
   }
 }
